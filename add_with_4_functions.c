@@ -2,13 +2,14 @@
 #include<stdio.h>
 int inputA();
 int inputB();
-int sum(int x, int y);
-
+int Sum(int x, int y);
+int display(int x);
 int main(){
-int a, b;
+int a, b, sum;
 a = inputA();
 b = inputB();
-sum(a, b);
+sum = Sum(a, b);
+display(sum);
 }
 
 int inputA(){
@@ -25,6 +26,11 @@ scanf("%d",&x);
 return x;
 }
 
-int sum(int x, int y){
-printf("Sum = ", x+y);
+int Sum(int x, int y){
+return x+y;
 }
+
+int display(int x){
+printf("\nSum = ",x);
+}
+
