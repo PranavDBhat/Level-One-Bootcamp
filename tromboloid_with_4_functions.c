@@ -1,39 +1,31 @@
 //WAP to find the volume of a tromboloid using 4 functions.
 #include<stdio.h>
-float InputH();
-float InputB();
-float InputD();
-float displayOut(float valueH, float valueB, float valueD);
+float inputHandBandD(float* valueH, float* valueB, float* valueD);
+float volumeOfTromboloid(float* valueH, float* valueB, float* valueD);
+int displayParameters(float* valH, float* valB, float* valD);
+int displayOut(float volume);
 int main(){
 float h,b,d;
-h = InputH();
-d = InputD();
-b = InputB();
-displayOut(h, b, d);
+inputHandBandD(&h, &b, &d);
+displayParameters(&h, &b, &d);
+displayOut(volumeOfTromboloid(&h, &b, &d));
 }
 
-float InputH(){
-int x;
-printf("Enter the value of H: ");
-scanf("%d", &x);
-return x;
+float inputHandBandD(float* valueH, float* valueB, float* valueD){
+printf("Enter the values of H, B & D: ");
+scanf("%f %f %f", &*valueH, &*valueB, &*valueD);
 }
 
-float InputD(){
-int x;
-printf("\nEnter the value of D: ");
-scanf("%d", &x);
-return x;
+float volumeOfTromboloid(float* valueH, float* valueB, float* valueD){
+return ((*valueH * *valueD * *valueB)+(*valueD / *valueB))/3;
 }
 
-float InputB(){
-int x;
-printf("\nEnter the value of B: ");
-scanf("%d", &x);
-return x;
+int displayParameters(float* valH, float* valB, float* valD){
+printf("\n The value of H = %f", *valH);
+printf("\n The value of B = %f", *valB);
+printf("\n The value of D = %f", *valD);
 }
 
-
-float displayOut(float valueH, float valueB, float valueD){
-printf("\n The volume the Tromboloid = %f", ((valueH * valueD * valueB)+(valueD / valueB))/3);
+int displayOut(float volume){
+printf("\n The volume the Tromboloid = %f", volume);
 }
