@@ -35,3 +35,10 @@ for (int i = 1; i < n; i++)
 lcm = (((arr[i] * lcm)) / (gcd(arr[i], lcm)));
 return lcm;
 }
+
+int fracSum(int n, int nu[],int de[]){
+int franu = 0, frade = lcm(fra.den, n);
+for (int i = 0; i < n; i++) 
+franu = franu + (nu[i]) * (frade/ fra.den[i]);
+printf("Sum = %d/%d", franu,frade);
+}
